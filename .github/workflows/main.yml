@@ -24,4 +24,5 @@ jobs:
 
       #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn test
+        working-directory: simple-api-student-main/pom.xml
+        run: mvn clean verify
