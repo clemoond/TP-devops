@@ -3,7 +3,8 @@ on:
   #to begin you want to launch this job in main and develop
   push:
     branches:
-      - master
+      - main
+      - develop
   pull_request:
 
 jobs:
@@ -19,6 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 17
+          distribution: 'adopt'
 
       #finally build your app with the latest command
       - name: Build and test with Maven
