@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+    backend:
+      container_name: my-running-app
+      build: ./simple-api-student-main
+      networks: 
+        - app-network
+      depends_on: 
+        - database
+
+    database:
+      container_name: db
+      build: ./Database
+      networks: 
+        - app-network
+
+    httpd:
+      container_name: my-front-app
+      build: ./http
+      ports: 
+        - "8080:80"
+      networks: 
+        - app-network
+      depends_on: 
+        - backend
+
+networks:
+  app-network:
