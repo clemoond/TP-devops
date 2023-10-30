@@ -47,7 +47,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./simple-api-student-main
           # Note: tags has to be all lower-case
-          tags:  ${{secrets.DOCKERHUB_USERNAME}}/simple-api-student-main:1.0
+          tags:  ${{secrets.DOCKERHUB_USERNAME}}/simple-api-student-main:latest
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
