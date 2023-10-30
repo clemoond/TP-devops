@@ -48,6 +48,8 @@ jobs:
           context: ./simple-api-student-main
           # Note: tags has to be all lower-case
           tags:  ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/simple-api-student-main
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
@@ -56,7 +58,8 @@ jobs:
           context: ./database
           # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/database
-
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
       - name: Build image and push http
         uses: docker/build-push-action@v3
         with:
@@ -64,3 +67,5 @@ jobs:
           context: ./http
           # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/http
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
