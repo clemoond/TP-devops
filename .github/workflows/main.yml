@@ -50,9 +50,9 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           # relative path to the place where source code with Dockerfile is located
-          context: ./Database
+          context: ./database
           # Note: tags has to be all lower-case
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/Database
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops/database
 
       - name: Build image and push http
         uses: docker/build-push-action@v3
