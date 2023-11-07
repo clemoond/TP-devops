@@ -11,7 +11,7 @@ services:
 
     database:
       container_name: db
-      build: ./Database
+      build: database
       networks: 
         - app-network
 
