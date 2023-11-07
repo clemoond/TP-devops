@@ -72,3 +72,4 @@ jobs:
           tags: ${{secrets.DOCKERHUB_USERNAME}}/http:1.0
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
+
