@@ -1,0 +1,9 @@
+# tasks file for roles/app
+
+
+- name: Run backend
+  docker_container:
+    name: my-running-app
+    image: clemenced69/simple-api-student-main:latest
+    networks:
+      - name: app-network

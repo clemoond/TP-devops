@@ -1,0 +1,12 @@
+---
+# tasks file for roles/proxy
+
+- name: Run Proxy Container
+  docker_container:
+    name: my-front-app
+    ports:
+      - "80:80"
+    image: clemenced69/http:1.0
+    networks:
+      - name: app-network
+
